@@ -8,11 +8,11 @@
 		
 		
 		<c:choose>
-			<c:when test="${authUser.name != null}">
+			<c:when test="${authUser.userName != null}">
 				<ul>	
 					<!-- 로그인 후 메뉴 -->
 					<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
-					<li><a href="">내블로그</a></li>
+					<li><a href="${pageContext.request.contextPath}/blog/main">내블로그</a></li>
 	 			</ul>
  			</c:when>
  			<c:otherwise>
