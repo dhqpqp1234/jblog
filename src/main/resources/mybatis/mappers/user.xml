@@ -7,15 +7,16 @@
 	 <!-- 쿼리문 작성 --> 
 	 
 	 
-	 <!-- 회원 id 정보 가져오기 
-	 <select id="getUserOne" parameterType="com.javaex.vo.UserVo">
+	 <!--  회원 id 정보 가져오기 --> 
+	 <select id="getUserOne" parameterType="String" resultType="String">
 	 	<![CDATA[
 	 		select 
-      			   id
+   				 id  
 			from users
+			where id = #{id}
 	 	]]>
 	 </select>
-	 -->
+	 
 	 
 	 <!-- 회원가입 -->
 	<insert id="userInsert" parameterType="com.javaex.vo.UserVo">

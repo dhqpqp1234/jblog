@@ -11,14 +11,14 @@ public class UserDao {
 	
 	@Autowired
 	private SqlSession sqlSession;
-	/*
+	
 	//아이디 체크
 	public String idCheck(String id) {
 		System.out.println("UserDao>idCheck");
 		
 		return sqlSession.selectOne("user.getUserOne",id);
 	}
-	*/
+	
 	//회원가입
 	public int userInsert(UserVo userVo) {
 		System.out.println("userDao>join");

@@ -73,7 +73,7 @@
 </body>
 	
 	<script type="text/javascript">
-		/*
+		
 		$("#btnIdCheck").on("click",function(){
 			console.log("아이디 체크");
 			
@@ -84,27 +84,27 @@
 			$.ajax({
 				url : "${pageContext.request.contextPath }/user/idCheck",
 				type : "post",
-				//contentType : "application/json",
+				contentType : "application/json",
 				data : JSON.stringify(id),
 				
 				dataType : "json",
 				success : function(data){
-				 성공시 처리해야될 코드 작성 
+				// 성공시 처리해야될 코드 작성 
 				
-				if(id == "success"){
-					$("#tdMsg").text("사용할수 없는 아이디입니다.");
-				}else{
-					$("#tdMsg").text("사용할수 있는 아이디입니다.");					
-				}
-				
+					if(data != null){
+						$("#tdMsg").html("사용중인 아이디입니다.");
+						console.log(data);
+					} else {
+						$("#tdMsg").html("사용할수 있는 아이디입니다.");
+					}
 				},
 				error : function(XHR, status, error) {
-				console.error(status + " : " + error);
+					console.error(status + " : " + error);
 				}
-				});
+			});
 
 		});
-		*/
+		
 		
 		//입력여부
 		$("#joinForm").on("click","#btnJoin",function(){

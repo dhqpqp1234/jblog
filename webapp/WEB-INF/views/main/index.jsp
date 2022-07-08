@@ -16,12 +16,12 @@
 		<c:import url="/WEB-INF/views/includes/main-header.jsp"></c:import>
 		
 		<form id="search-form">
-			<fieldset>
+			<fieldset style="border:none;">
 				<input type="text" name="keyword" >
 				<button id="btnSearch" type="submit" >검색</button>
 			</fieldset>
 			
-			<fieldset>
+			<fieldset style="border:none;">
 				<label for="rdo-title">블로그 제목</label> 
 				<input id="rdo-title" type="radio" name="kwdOpt" value="optTitle" > 
 				

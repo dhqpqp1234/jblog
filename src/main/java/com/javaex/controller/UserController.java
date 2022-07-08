@@ -28,17 +28,17 @@ public class UserController {
 		return "/user/joinForm";
 	
 	}
-	/*
+	
 	//아이디 중복검사
 	@ResponseBody
 	@RequestMapping(value="/user/idCheck", method= {RequestMethod.GET, RequestMethod.POST})
-	public String joinCheck(@RequestParam("id") String id) {
+	public String joinCheck(@RequestBody String id) {
 		System.out.println("UserController>joinCheck");
 		System.out.println(id);
 		
 		return userService.idCheck(id);
 	}
-	*/
+	
 	//회원가입
 	@RequestMapping(value="/user/join", method= {RequestMethod.GET, RequestMethod.POST})
 	public String join(@ModelAttribute UserVo userVo) {
