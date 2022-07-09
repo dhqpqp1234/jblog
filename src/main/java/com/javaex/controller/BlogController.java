@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.javaex.service.BlogService;
 import com.javaex.vo.BlogVo;
@@ -24,6 +25,7 @@ public class BlogController {
 	@RequestMapping(value="/blog/{id}", method= {RequestMethod.POST,RequestMethod.GET})
 	public String blogMain() {
 		System.out.println("blogController>blogMain");
+		
 		
 		return "blog/blog-main";
 	}
@@ -41,22 +43,19 @@ public class BlogController {
 		
 	//내블로그 관리
 	@RequestMapping(value="/blog/{id}/admin/basic", method= {RequestMethod.GET,RequestMethod.POST})
-	public String management(@PathVariable String id) {
+	public String management(@PathVariable String id, Model model) {
 		System.out.println("blogController>management");
 		
 		return "blog/admin/blog-admin-basic";
 	}
 	
-	//회원정보가져오기
-	@RequestMapping(value="/blog/getUser", method= {RequestMethod.GET,RequestMethod.POST})
-	public String getUser(@RequestParam("id") String id, Model model ) {
-		System.out.println("blogController>getUser");
+	//사진 업로드
+	@RequestMapping(value="/blog/{id}/admin/basic/upload", method= {RequestMethod.GET,RequestMethod.POST})
+	public String upload(@RequestParam("file") MultipartFile file, Model model) {
+		System.out.println("blogController>upload");
 		
-		BlogVo bVo = blogService.getUser(id);
-		
-		model.addAttribute("bVo",bVo);
-		
-		System.out.println(bVo);
+		//String saveName = blogService.save(file);
+		//model.addAttribute("saveName",saveName);
 		
 		return "";
 	}

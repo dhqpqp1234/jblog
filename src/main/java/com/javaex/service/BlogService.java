@@ -20,5 +20,13 @@ public class BlogService {
 		
 		return bVo;
 	}
+
+	//블로그 회원정보추가
+	public int blogInsert(BlogVo bVo) {
+		
+		int count = blogDao.blogInsert(bVo);
+		
+		return count;
+	}
 	
 }

@@ -16,4 +16,12 @@
 		and b.id = #{id}
 	 ]]>
 	 </select>
+	 
+	 <insert id="blogInsert" parameterType="com.javaex.vo.BlogVo">
+	 	<![CDATA[
+	 		INSERT INTO blog
+    			values(#{id},#{blogTitle},#{logoFile})
+	 	]]>
+	 </insert>
+	 
 </mapper>

@@ -8,5 +8,8 @@
 	<mappers>
 		<mapper resource="mybatis/mappers/user.xml" />
 		<mapper resource="mybatis/mappers/blog.xml" />
+		<mapper resource="mybatis/mappers/catagory.xml" />
+		<mapper resource="mybatis/mappers/post.xml" />
+		<mapper resource="mybatis/mappers/comments.xml" />
 	</mappers>
 </configuration>

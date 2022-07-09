@@ -21,4 +21,12 @@ public class BlogDao {
 		return bVo;
 	}
 	
+	//블로그 회원정보 추가
+	public int blogInsert(BlogVo bVo) {
+		
+		int count = sqlSession.insert("blog.blogInsert",bVo);
+		
+		return count;
+	}
+	
 }
